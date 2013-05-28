@@ -1,0 +1,51 @@
+
+
+<h1>New Call</h1>
+
+
+<%= form_tag(calls_url, method: 'post') do %>
+
+  <div>
+    <%= label_tag :team_id %><br />
+    <%= select_tag :team_id, options_from_collection_for_select(Team.all, :id,
+    :name) %>
+  </div>
+
+  <div>
+    <%= label_tag :player_id %><br />
+    <%= select_tag :player_id, options_from_collection_for_select(Player.all, :id,
+    :name) %>
+  </div>
+
+  <div>
+    <%= label_tag :game_id %><br />
+    <%= number_field_tag :game_id %>
+  </div>
+
+  <div>
+    <%= label_tag :ref_id %><br />
+    <%= select_tag :ref_id, options_from_collection_for_select(Ref.all, :id,
+    :name) %>
+  </div>
+
+  <div>
+    <%= label_tag :foul_id %><br />
+    <%= select_tag :foul_id, options_from_collection_for_select(Foul.all, :id,
+    :fouls_type) %>
+  </div>
+
+  <div>
+    <%= label_tag :quarter %><br />
+    <%= number_field_tag :quarter %>
+  </div>
+
+  <div>
+    <%= label_tag :time %><br />
+    <%= text_field_tag :time %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Call", :class => 'btn btn-danger' %>
+  </div>
+<% end %>

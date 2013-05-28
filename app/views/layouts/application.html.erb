@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TFC</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if !@hide_nav_bar %>
+
+<div class = "navbar">
+      <div class = "navbar-inner">
+        <a class = "brand puul-left" href="#">The Fan's <span class = "red-highlight"> Challenge</span></a>
+        <ul class = "nav">
+          <li><a href = <%= locker_room_url(:id) %>>| Locker Room |</a></li>
+          <li><a href = "#">| Games |</a></li>
+          <li><a href = "/calls">| Challenges |</a></li>
+           <li>
+              <%= link_to '| Sign Out |', log_out_url, :method => 'delete' %>
+          </li>
+
+            <ul class = "dropdown-menu" role = "menu" aria-labelledby="userMenu">
+              <li><a tabindex = "-1" href = "#">| My Games |</a></li>
+              <li><a href = "#">| Challenges |</a></li>
+            </ul>
+
+        </ul>
+        <form class = "navbar-search">
+          <input type = "text" class = "search-query" placeholder = "Search">
+
+        </form>
+
+      </div>
+    </div>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>
+
+
+
+

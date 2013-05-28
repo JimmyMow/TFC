@@ -1,0 +1,16 @@
+<h1>Editing Foul #<%= @foul.id %></h1>
+
+
+<%= form_tag(foul_url(@foul), method: 'put') do %>
+
+  <div>
+    <%= label_tag :fouls_type %><br />
+    <%= number_field_tag :fouls_type, @foul.fouls_type %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Foul" %>
+  </div>
+
+<% end %>

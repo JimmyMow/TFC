@@ -1,0 +1,27 @@
+<h1>New Player</h1>
+
+
+<%= form_tag(players_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name %>
+  </div>
+
+  <div>
+    <%= label_tag :number %><br />
+    <%= number_field_tag :number %>
+  </div>
+
+  <div>
+    <%= label_tag :team_id %><br />
+    <%= select_tag :team_id, options_from_collection_for_select(Team.all, :id,
+     :name) %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Player" %>
+  </div>
+<% end %>

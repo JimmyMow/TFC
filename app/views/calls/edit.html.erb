@@ -1,0 +1,51 @@
+<h1>Editing Call #<%= @call.id %></h1>
+
+
+<%= form_tag(call_url(@call), method: 'put') do %>
+
+  <div>
+    <%= label_tag :player_id %><br />
+    <%= number_field_tag :player_id, @call.player_id %>
+  </div>
+
+  <div>
+    <%= label_tag :team_id %><br />
+    <%= number_field_tag :team_id, @call.team_id %>
+  </div>
+
+  <div>
+    <%= label_tag :game_id %><br />
+    <%= number_field_tag :game_id, @call.game_id %>
+  </div>
+
+  <div>
+    <%= label_tag :ref_id %><br />
+    <%= number_field_tag :ref_id, @call.ref_id %>
+  </div>
+
+  <div>
+    <%= label_tag :foul_type_id %><br />
+    <%= number_field_tag :foul_type_id, @call.foul_type_id %>
+  </div>
+
+  <div>
+    <%= label_tag :vote_id %><br />
+    <%= number_field_tag :vote_id, @call.vote_id %>
+  </div>
+
+  <div>
+    <%= label_tag :quarter %><br />
+    <%= number_field_tag :quarter, @call.quarter %>
+  </div>
+
+  <div>
+    <%= label_tag :time %><br />
+    <%= number_field_tag :time, @call.time %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Call" %>
+  </div>
+
+<% end %>

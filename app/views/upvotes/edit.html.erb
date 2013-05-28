@@ -1,0 +1,21 @@
+<h1>Editing Upvote #<%= @upvote.id %></h1>
+
+
+<%= form_tag(upvote_url(@upvote), method: 'put') do %>
+
+  <div>
+    <%= label_tag :user_id %><br />
+    <%= number_field_tag :user_id, @upvote.user_id %>
+  </div>
+
+  <div>
+    <%= label_tag :call_id %><br />
+    <%= number_field_tag :call_id, @upvote.call_id %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Upvote" %>
+  </div>
+
+<% end %>

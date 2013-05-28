@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8">
+    <title>Sign Up - The Fan's Challenge</title>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta name = "description" content = "The Fan's Challenge Sign-Up Page">
+    <meta name = "author" content = "Harsha Murthy">
+  </head>
+
+  <body class = "tfc-body">
+    <header class = "tfc-header">
+      Rise to the <span class = "red-highlight">Challenge</span>
+    </header>
+
+    <div class = "container">
+      <%= form_tag(create_user_url, :method => :post, :class => "tfc-form tfc-signup-form") do %>
+        <%= text_field_tag(:first_name, nil, :class => "input-block-level", :placeholder => "First Name") %>
+        <%= text_field_tag(:last_name, nil, :class => "input-block-level", :placeholder => "Last Name",) %>
+        <%= text_field_tag(:username, nil, :class => "input-block-level", :placeholder => "Username") %>
+        <%= email_field_tag(:email, nil, :class => "input-block-level", :placeholder => "Email") %>
+        <%= password_field_tag(:password, nil, :class => "input-block-level", :placeholder => "Password") %>
+        <%= password_field_tag(:password_confirmation, nil, :class => "input-block-level", :placeholder => "Confirm Password") %>
+        <%= submit_tag("Create Account", :class => "btn btn-large create-account btn-danger") %>
+      <% end %>
+    </div>
+  </body>
+</html>

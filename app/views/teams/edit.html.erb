@@ -1,0 +1,31 @@
+<h1>Editing Team #<%= @team.id %></h1>
+
+
+<%= form_tag(team_url(@team), method: 'put') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @team.name %>
+  </div>
+
+  <div>
+    <%= label_tag :coach %><br />
+    <%= text_field_tag :coach, @team.coach %>
+  </div>
+
+  <div>
+    <%= label_tag :game_id %><br />
+    <%= number_field_tag :game_id, @team.game_id %>
+  </div>
+
+  <div>
+    <%= label_tag :call_id %><br />
+    <%= number_field_tag :call_id, @team.call_id %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Team" %>
+  </div>
+
+<% end %>

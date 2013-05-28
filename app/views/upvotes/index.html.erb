@@ -1,0 +1,30 @@
+<h1>Upvotes</h1>
+
+<p><%= link_to 'Add a New Upvote', new_upvote_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Call</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @upvotes.each do |upvote| %>
+    <tr>
+      <td><%= upvote.user_id %></td>
+      <td><%= upvote.call_id %></td>
+  
+      <td><%= link_to 'Show', upvote_url(upvote) %></td>
+      <td><%= link_to 'Edit', edit_upvote_url(upvote) %></td>
+      <td><%= link_to 'Destroy', upvote_url(upvote), method: 'delete', data: { confirm: "Do you really want to delete this upvote?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

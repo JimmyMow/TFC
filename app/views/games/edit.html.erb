@@ -1,0 +1,16 @@
+<h1>Editing Game #<%= @game.id %></h1>
+
+
+<%= form_tag(game_url(@game), method: 'put') do %>
+
+  <div>
+    <%= label_tag :event %><br />
+    <%= text_field_tag :event, @game.event %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Game" %>
+  </div>
+
+<% end %>

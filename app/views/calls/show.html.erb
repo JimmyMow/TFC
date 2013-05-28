@@ -1,0 +1,48 @@
+
+<h1>Call #<%= @call.id %></h1>
+
+<p>
+  <b>Player:</b>
+  <%= link_to @call.player.name, player_url %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <%= link_to @call.team.name, team_url %>
+</p>
+
+<p>
+  <b>Game:</b>
+  <%= @call.game_id %>
+</p>
+
+<p>
+  <b>Ref:</b>
+  <%= link_to @call.ref.name, ref_url %>
+</p>
+
+<p>
+  <b>Foul type:</b>
+  <%= link_to @call.foul.fouls_type, foul_url %>
+</p>
+
+<p>
+  <b>Quarter:</b>
+  <%= @call.quarter %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @call.time %>
+</p>
+
+<p>
+  <b>Disagrees:</b>
+  <%= @call.votes.count %>
+</p>
+
+<p>
+  <b>Agrees:</b>
+  <%= @call.upvotes.count %>
+</p>
+

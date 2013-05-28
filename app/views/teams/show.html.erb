@@ -1,0 +1,32 @@
+<h1>Team #<%= @team.id %></h1>
+
+<p>
+  <b>Name:</b>
+  <%= @team.name %>
+</p>
+
+<p>
+  <b>Coach:</b>
+  <%= @team.coach %>
+</p>
+
+<p>
+  <b>Game:</b>
+  <%= @team.game_id %>
+</p>
+
+<p>
+  <b>Call:</b>
+  <%= @team.call_id %>
+</p>
+
+<p>
+<b>Players:</b>
+  <ul>
+    <% @team.players.each do |player| %>
+<li><%= link_to player.name, player_url %></li>
+  <% end %>
+  </ul>
+</p>
+
+

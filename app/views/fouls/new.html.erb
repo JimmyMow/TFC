@@ -1,0 +1,16 @@
+<h1>New Foul</h1>
+
+
+<%= form_tag(fouls_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :fouls_type %><br />
+    <%= text_field_tag :fouls_type %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Foul" %>
+  </div>
+<% end %>
