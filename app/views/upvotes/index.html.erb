@@ -1,3 +1,5 @@
+<br/ >
+<br/ >
 <h1>Upvotes</h1>
 
 <p><%= link_to 'Add a New Upvote', new_upvote_url %></p>
@@ -18,7 +20,7 @@
     <tr>
       <td><%= upvote.user_id %></td>
       <td><%= upvote.call_id %></td>
-  
+
       <td><%= link_to 'Show', upvote_url(upvote) %></td>
       <td><%= link_to 'Edit', edit_upvote_url(upvote) %></td>
       <td><%= link_to 'Destroy', upvote_url(upvote), method: 'delete', data: { confirm: "Do you really want to delete this upvote?" } %></td>

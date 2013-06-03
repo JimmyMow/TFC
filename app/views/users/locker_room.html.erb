@@ -8,7 +8,21 @@
     <meta name = "author" content = "Harsha Murthy">
   </head>
 
-<body class = "tfc-body">
+<script type="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+<script>
+$(document).ready(function() {
 
+$("h1").on("click", function() {
+          $(".fav_teams").slideToggle();
+        });
+});
+</script>
+<body class = "tfc-body">
+<br/ >
+<br/ >
+<h1 class= 'locker_room_h1'>Favorite Teams</h1>
+<ul class= "fav_teams">
+<%= link_to 'Add Favorite', add_favorite_url, :class => 'btn' %>
+</ul>
 
 </body>

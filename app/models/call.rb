@@ -1,7 +1,9 @@
 class Call < ActiveRecord::Base
   belongs_to :foul
 
-  belongs_to :player
+  belongs_to :comit_player, class_name: 'Player', foreign_key:'comit_player_id'
+
+  belongs_to :fouled_player, class_name: 'Player', foreign_key:'fouled_player_id'
 
   belongs_to :ref
 

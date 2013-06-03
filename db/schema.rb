@@ -11,10 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528193424) do
+ActiveRecord::Schema.define(:version => 20130602072801) do
 
   create_table "calls", :force => true do |t|
-    t.integer "player_id"
+    t.integer "comit_player_id"
+    t.integer "fouled_player_id"
     t.integer "team_id"
     t.integer "game_id"
     t.integer "ref_id"
@@ -22,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20130528193424) do
     t.integer "quarter"
     t.integer "time"
     t.integer "foul_id"
+    t.integer "vote_counter",     :default => 0
   end
 
   create_table "fouls", :force => true do |t|

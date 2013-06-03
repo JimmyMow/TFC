@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @hide_nav_bar = true
     @user = User.new
   end
 
@@ -64,5 +65,9 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     @user.destroy
     redirect_to new_session_url
+  end
+
+  def create_team
+    redirect_to locker_room_url(@user)
   end
 end

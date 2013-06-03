@@ -1,5 +1,5 @@
 class Vote < ActiveRecord::Base
-  belongs_to :calls
+  belongs_to :call
   has_many :refs, :through => :calls
   has_many :games, :through => :calls
   has_many :players, :through => :calls

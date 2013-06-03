@@ -10,10 +10,12 @@ class CallsController < ApplicationController
 
   def index
     @calls = Call.all
+    @rank = Call.order(:vote_counter).reverse
   end
 
   def show
     @call = Call.find_by_id(params[:id])
+    @player = Player.find_by_id(params[:id])
   end
 
   def new
@@ -22,7 +24,8 @@ class CallsController < ApplicationController
 
   def create
     @call = Call.new
-    @call.player_id = params[:player_id]
+    @call.comit_player_id = params[:comit_player_id]
+    @call.fouled_player_id = params[:fouled_player_id]
     @call.team_id = params[:team_id]
     @call.game_id = params[:game_id]
     @call.ref_id = params[:ref_id]
@@ -32,6 +35,7 @@ class CallsController < ApplicationController
     @call.time = params[:time]
 
     if @call.save
+
       redirect_to calls_url
     else
       render 'new'
@@ -44,7 +48,8 @@ class CallsController < ApplicationController
 
   def update
     @call = Call.find_by_id(params[:id])
-    @call.player_id = params[:player_id]
+    @call.comit_player_id = params[:comit_player_id]
+    @call.fouled_player_id = params[:fouled_player_id]
     @call.team_id = params[:team_id]
     @call.game_id = params[:game_id]
     @call.ref_id = params[:ref_id]

@@ -19,6 +19,8 @@ class VotesController < ApplicationController
 
 
     if @vote.save
+      @vote.call.vote_counter += 1
+      @vote.call.save
       redirect_to call_url(params[:call_id])
     else
       render 'new'

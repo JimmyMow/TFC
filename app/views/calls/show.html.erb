@@ -1,29 +1,37 @@
-
+<br/ >
+<br/ >
 <h1>Call #<%= @call.id %></h1>
 
 <p>
   <b>Player:</b>
-  <%= link_to @call.player.name, player_url %>
+  <%= link_to @call.comit_player.name, player_url(
+  @call.comit_player.id) %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= link_to @call.fouled_player.name, player_url(
+  @call.fouled_player.id) %>
 </p>
 
 <p>
   <b>Team:</b>
-  <%= link_to @call.team.name, team_url %>
+  <%= link_to @call.team.name, team_url(@call.team.id) %>
 </p>
 
 <p>
   <b>Game:</b>
-  <%= @call.game_id %>
+  <%= link_to @call.game.event, game_url(@call.game.id) %>
 </p>
 
 <p>
   <b>Ref:</b>
-  <%= link_to @call.ref.name, ref_url %>
+  <%= link_to @call.ref.name, ref_url(@call.ref.id) %>
 </p>
 
 <p>
   <b>Foul type:</b>
-  <%= link_to @call.foul.fouls_type, foul_url %>
+  <%= link_to @call.foul.fouls_type, foul_url(@call.foul.id) %>
 </p>
 
 <p>

@@ -1,25 +1,26 @@
-
-
+<br/ >
+<br/ >
 <h1>New Call</h1>
 
 
 <%= form_tag(calls_url, method: 'post') do %>
 
   <div>
-    <%= label_tag :team_id %><br />
-    <%= select_tag :team_id, options_from_collection_for_select(Team.all, :id,
+    <%= label_tag :comit_player_id %><br />
+    <%= select_tag :comit_player_id, options_from_collection_for_select(Player.all, :id,
     :name) %>
   </div>
 
   <div>
-    <%= label_tag :player_id %><br />
-    <%= select_tag :player_id, options_from_collection_for_select(Player.all, :id,
+    <%= label_tag :fouled_player_id %><br />
+    <%= select_tag :fouled_player_id, options_from_collection_for_select(Player.all, :id,
     :name) %>
   </div>
 
   <div>
     <%= label_tag :game_id %><br />
-    <%= number_field_tag :game_id %>
+    <%= select_tag :game_id, options_from_collection_for_select(Game.all, :id,
+    :event) %>
   </div>
 
   <div>
@@ -46,6 +47,6 @@
 
 
   <div>
-    <%= submit_tag "Create Call", :class => 'btn btn-danger' %>
+    <%= submit_tag "Create Challenge", :class => 'btn btn-danger' %>
   </div>
 <% end %>

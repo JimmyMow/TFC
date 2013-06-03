@@ -14,8 +14,9 @@
     <header class = "tfc-header">
       The Fan's <span class ="red-highlight">Challenge</span>
     </header>
-
-<div class="container">
+   <iframe width="560" height="315" src="http://www.youtube.com/embed/Pikd-9qqQ1c" frameborder="0" allowfullscreen></iframe>
+<div class='sign-in-float'>
+  <div class="container">
       <%= field_set_tag(nil, :class => "signin-fieldset") do %>
         <%= form_tag(session_url, :method => :post, :class => "tfc-form") do %>
           <%= text_field_tag(:username, nil, :class => "input-block-level", :placeholder => "Username") %>
@@ -25,5 +26,6 @@
         <% end %>
       <% end %>
     </div>
+  </div>
   </body>
 </html>

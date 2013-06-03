@@ -1039,3 +1039,26 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 .locker-room-menu-button {
   color: red;
 }
+
+.event {
+color: #505050;
+}
+
+.table_head {
+  color: #CC0000;
+}
+
+.locker_room_h1 {
+  color: #CB2E23;
+}
+
+.fav_teams {
+  color: white;
+}
+
+.sign-in-float {
+  float: right;
+  position: absolute;
+  right: -125px;
+  top: 210px;
+}

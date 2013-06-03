@@ -1,3 +1,5 @@
+<br/ >
+<br/ >
 <h1>New Ref</h1>
 
 
@@ -15,8 +17,9 @@
   </div>
 
   <div>
-    <%= label_tag :game_id %><br />
-    <%= number_field_tag :game_id %>
+     <%= label_tag :game_id %><br />
+    <%= select_tag :game_id, options_from_collection_for_select(Game.all, :id,
+    :event) %>
   </div>
 
 

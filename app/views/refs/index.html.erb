@@ -1,3 +1,5 @@
+<br/ >
+<br/ >
 <h1>Refs</h1>
 
 <p><%= link_to 'Add a New Ref', new_ref_url %></p>
@@ -20,7 +22,7 @@
       <td><%= ref.name %></td>
       <td><%= ref.number %></td>
       <td><%= ref.game_id %></td>
-  
+
       <td><%= link_to 'Show', ref_url(ref) %></td>
       <td><%= link_to 'Edit', edit_ref_url(ref) %></td>
       <td><%= link_to 'Destroy', ref_url(ref), method: 'delete', data: { confirm: "Do you really want to delete this ref?" } %></td>

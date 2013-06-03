@@ -9,13 +9,13 @@
 <body>
 <% if !@hide_nav_bar %>
 
-<div class = "navbar">
+<div class = "navbar navbar-fixed-top">
       <div class = "navbar-inner">
         <a class = "brand puul-left" href="#">The Fan's <span class = "red-highlight"> Challenge</span></a>
         <ul class = "nav">
           <li><a href = <%= locker_room_url(:id) %>>| Locker Room |</a></li>
-          <li><a href = "#">| Games |</a></li>
-          <li><a href = "/calls">| Challenges |</a></li>
+          <li><a href = "/games">| Games |</a></li>
+          <li><a href = "/calls">| Challenge Feed |</a></li>
            <li>
               <%= link_to '| Sign Out |', log_out_url, :method => 'delete' %>
           </li>
@@ -35,7 +35,12 @@
     </div>
   <% end %>
 
+
 <%= yield %>
+
+<footer>
+    <p>&copy; Pa5sedPawn Productions 2013</p>
+  </footer>
 
 </body>
 </html>

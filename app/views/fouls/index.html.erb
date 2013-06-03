@@ -1,3 +1,5 @@
+<br/ >
+<br/ >
 <h1>Fouls</h1>
 
 <p><%= link_to 'Add a New Foul', new_foul_url %></p>
@@ -16,7 +18,7 @@
   <% @fouls.each do |foul| %>
     <tr>
       <td><%= foul.fouls_type %></td>
-  
+
       <td><%= link_to 'Show', foul_url(foul) %></td>
       <td><%= link_to 'Edit', edit_foul_url(foul) %></td>
       <td><%= link_to 'Destroy', foul_url(foul), method: 'delete', data: { confirm: "Do you really want to delete this foul?" } %></td>

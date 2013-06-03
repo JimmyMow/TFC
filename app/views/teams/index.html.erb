@@ -1,3 +1,5 @@
+<br/ >
+<br/ >
 <h1>Teams</h1>
 
 <p><%= link_to 'Add a New Team', new_team_url %></p>
@@ -22,7 +24,7 @@
       <td><%= team.coach %></td>
       <td><%= team.game_id %></td>
       <td><%= team.call_id %></td>
-  
+
       <td><%= link_to 'Show', team_url(team) %></td>
       <td><%= link_to 'Edit', edit_team_url(team) %></td>
       <td><%= link_to 'Destroy', team_url(team), method: 'delete', data: { confirm: "Do you really want to delete this team?" } %></td>

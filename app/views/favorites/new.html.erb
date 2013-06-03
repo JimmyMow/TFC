@@ -1,0 +1,18 @@
+<br/ >
+<br/ >
+<h1>New Favorite</h1>
+
+
+<%= form_tag(create_favorite_url, method: 'post') do %>
+
+  <div>
+    <%= label_tag :team_id %><br />
+    <%= select_tag :team_id, options_from_collection_for_select(Team.all, :id,
+    :name) %>
+  </div>
+
+  <div>
+    <%= submit_tag "Add Favorite", :class => 'btn btn-danger' %>
+  </div>
+
+<% end %>

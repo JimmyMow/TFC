@@ -1,7 +1,8 @@
 class CreateCalls < ActiveRecord::Migration
   def change
     create_table :calls do |t|
-      t.integer :player_id
+      t.integer :comit_player_id
+      t.integer :fouled_player_id
       t.integer :team_id
       t.integer :game_id
       t.integer :ref_id

@@ -48,6 +48,7 @@ TFC::Application.routes.draw do
 
   # READ
   get '/calls', controller: 'calls', action: 'index', as: 'calls'
+  get 'calls/game/:id', controller: 'calls', action: 'game', as: 'game'
   get '/calls/:id', controller: 'calls', action: 'show', as: 'call'
 
   # UPDATE
@@ -148,8 +149,12 @@ TFC::Application.routes.draw do
   get '/users/new', controller: 'users', action: 'new', as: 'new_user'
   post '/users', controller: 'users', action: 'create', as: 'create_user'
 
+
   # READ
   get '/users', controller: 'users', action: 'index', as: 'users'
+  #FAVORITE GAMES
+  get  '/users/addteam', controller: 'favorites', action: 'new', as: 'add_favorite'
+  post '/users', controller: 'favorites', action: 'create', as: 'create_favorite'
   get '/users/:id', controller: 'users', action: 'show', as: 'user'
 
   # UPDATE
@@ -162,6 +167,8 @@ TFC::Application.routes.draw do
   # VIEW LOCKER ROOM
   get '/:id', :controller => 'users', :action => 'locker_room', :as => 'locker_room'
   #------------------------------
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
