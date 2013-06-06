@@ -12,8 +12,20 @@
   </div>
 
   <div>
+    <%= label_tag :comit_team_id %><br />
+    <%= select_tag :comit_team_id, options_from_collection_for_select(Team.all, :id,
+    :name) %>
+  </div>
+
+  <div>
     <%= label_tag :fouled_player_id %><br />
     <%= select_tag :fouled_player_id, options_from_collection_for_select(Player.all, :id,
+    :name) %>
+  </div>
+
+  <div>
+    <%= label_tag :fouled_team_id %><br />
+    <%= select_tag :fouled_team_id, options_from_collection_for_select(Team.all, :id,
     :name) %>
   </div>
 

@@ -1,5 +1,39 @@
 TFC::Application.routes.draw do
 
+  # Routes for the Text resource:
+  # CREATE
+  get '/texts/new', controller: 'texts', action: 'new', as: 'new_text'
+  post '/texts', controller: 'texts', action: 'create'
+
+  # READ
+  get '/texts', controller: 'texts', action: 'index', as: 'texts'
+  get '/texts/:id', controller: 'texts', action: 'show', as: 'text'
+
+  # UPDATE
+  get '/texts/:id/edit', controller: 'texts', action: 'edit', as: 'edit_text'
+  put '/texts/:id', controller: 'texts', action: 'update'
+
+  # DELETE
+  delete '/texts/:id', controller: 'texts', action: 'destroy'
+  #------------------------------
+
+  # Routes for the Comment resource:
+  # CREATE
+  get '/comments/new', controller: 'comments', action: 'new', as: 'new_comment'
+  post '/comments', controller: 'comments', action: 'create'
+
+  # READ
+  get '/comments', controller: 'comments', action: 'index', as: 'comments'
+  get '/comments/:id', controller: 'comments', action: 'show', as: 'comment'
+
+  # UPDATE
+  get '/comments/:id/edit', controller: 'comments', action: 'edit', as: 'edit_comment'
+  put '/comments/:id', controller: 'comments', action: 'update'
+
+  # DELETE
+  delete '/comments/:id', controller: 'comments', action: 'destroy'
+  #------------------------------
+
   # Routes for the Upvote resource:
   # CREATE
   get '/upvotes/new', controller: 'upvotes', action: 'new', as: 'new_upvote'

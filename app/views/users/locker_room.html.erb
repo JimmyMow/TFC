@@ -20,9 +20,13 @@ $("h1").on("click", function() {
 <body class = "tfc-body">
 <br/ >
 <br/ >
-<h1 class= 'locker_room_h1'>Favorite Teams</h1>
+<h1 class= 'locker_room_h1'>Referee Stats</h1>
 <ul class= "fav_teams">
-<%= link_to 'Add Favorite', add_favorite_url, :class => 'btn' %>
+  <% @refs.each do |c| %>
+    <li>Referee: <%= c.name %></li>
+    Calls made: <%= c.calls.count %> ||
+    TFC Score: <%= c.votes.count %>
+  <% end %>
 </ul>
 
 </body>

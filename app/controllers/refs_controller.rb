@@ -6,6 +6,7 @@ class RefsController < ApplicationController
 
   def show
     @ref = Ref.find_by_id(params[:id])
+    @refs = Ref.all
   end
 
   def new
@@ -17,7 +18,7 @@ class RefsController < ApplicationController
     @ref.name = params[:name]
     @ref.number = params[:number]
     @ref.game_id = params[:game_id]
-    
+
     if @ref.save
       redirect_to refs_url
     else
@@ -34,7 +35,7 @@ class RefsController < ApplicationController
     @ref.name = params[:name]
     @ref.number = params[:number]
     @ref.game_id = params[:game_id]
-    
+
     if @ref.save
       redirect_to refs_url
     else

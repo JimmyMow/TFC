@@ -1,0 +1,21 @@
+<h1>Editing Text #<%= @text.id %></h1>
+
+
+<%= form_tag(text_url(@text), method: 'put') do %>
+
+  <div>
+    <%= label_tag :comment %><br />
+    <%= text_area_tag :comment, @text.comment %>
+  </div>
+
+  <div>
+    <%= label_tag :call_id %><br />
+    <%= number_field_tag :call_id, @text.call_id %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Text" %>
+  </div>
+
+<% end %>

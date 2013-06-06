@@ -16,6 +16,8 @@ class CallsController < ApplicationController
   def show
     @call = Call.find_by_id(params[:id])
     @player = Player.find_by_id(params[:id])
+    @comments = Comment.all
+    @comment = Comment.find_by_id(params[:id])
   end
 
   def new
@@ -26,7 +28,8 @@ class CallsController < ApplicationController
     @call = Call.new
     @call.comit_player_id = params[:comit_player_id]
     @call.fouled_player_id = params[:fouled_player_id]
-    @call.team_id = params[:team_id]
+    @call.comit_team_id = params[:comit_team_id]
+    @call.fouled_team_id = params[:fouled_team_id]
     @call.game_id = params[:game_id]
     @call.ref_id = params[:ref_id]
     @call.foul_id = params[:foul_id]

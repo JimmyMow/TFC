@@ -1,22 +1,17 @@
-<br/ >
+  <br/ >
 <br/ >
 <h1>Call #<%= @call.id %></h1>
 
 <p>
-  <b>Player:</b>
+  <b>Commit Player:</b>
   <%= link_to @call.comit_player.name, player_url(
   @call.comit_player.id) %>
 </p>
 
 <p>
-  <b>Player:</b>
+  <b>Fouled Player:</b>
   <%= link_to @call.fouled_player.name, player_url(
   @call.fouled_player.id) %>
-</p>
-
-<p>
-  <b>Team:</b>
-  <%= link_to @call.team.name, team_url(@call.team.id) %>
 </p>
 
 <p>
@@ -53,4 +48,18 @@
   <b>Agrees:</b>
   <%= @call.upvotes.count %>
 </p>
+
+</p>
+
+<ul>
+
+<% @comments.each do |n| %>
+  <%= render 'note_row', :comment => n %>
+<% end %>
+
+</ul>
+
+<%= form_for(Comment.new, remote: true) do |f| %>
+    <%= f.text_field :text_box, placeholder: 'Add a comment...' %>
+<% end %>
 

@@ -1,0 +1,30 @@
+<h1>Texts</h1>
+
+<p><%= link_to 'Add a New Text', new_text_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comment</th>
+      <th>Call</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @texts.each do |text| %>
+    <tr>
+      <td><%= text.comment %></td>
+      <td><%= text.call_id %></td>
+  
+      <td><%= link_to 'Show', text_url(text) %></td>
+      <td><%= link_to 'Edit', edit_text_url(text) %></td>
+      <td><%= link_to 'Destroy', text_url(text), method: 'delete', data: { confirm: "Do you really want to delete this text?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

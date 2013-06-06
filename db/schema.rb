@@ -11,12 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602072801) do
+ActiveRecord::Schema.define(:version => 20130606221339) do
 
   create_table "calls", :force => true do |t|
     t.integer "comit_player_id"
     t.integer "fouled_player_id"
-    t.integer "team_id"
     t.integer "game_id"
     t.integer "ref_id"
     t.integer "vote_id"
@@ -24,6 +23,13 @@ ActiveRecord::Schema.define(:version => 20130602072801) do
     t.integer "time"
     t.integer "foul_id"
     t.integer "vote_counter",     :default => 0
+    t.integer "comit_team_id"
+    t.integer "fouled_team_id"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer "call_id"
+    t.text    "text_box"
   end
 
   create_table "fouls", :force => true do |t|
@@ -39,12 +45,14 @@ ActiveRecord::Schema.define(:version => 20130602072801) do
     t.string  "name"
     t.integer "number"
     t.integer "team_id"
+    t.integer "vote_id"
   end
 
   create_table "refs", :force => true do |t|
     t.string  "name"
     t.integer "number"
     t.integer "game_id"
+    t.integer "vote_id"
   end
 
   create_table "teams", :force => true do |t|
@@ -52,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20130602072801) do
     t.string  "coach"
     t.integer "game_id"
     t.integer "call_id"
+    t.integer "vote_id"
   end
 
   create_table "upvotes", :force => true do |t|
@@ -71,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20130602072801) do
   create_table "votes", :force => true do |t|
     t.integer "user_id"
     t.integer "call_id"
+    t.integer "ref_id"
   end
 
 end

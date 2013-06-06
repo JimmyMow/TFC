@@ -40,6 +40,9 @@ class UsersController < ApplicationController
 
   def locker_room
     @user = User.find_by_id(session[:user_id])
+    @refs = Ref.all
+    @players = Player.all
+    @calls = Call.all
   end
 
   def edit

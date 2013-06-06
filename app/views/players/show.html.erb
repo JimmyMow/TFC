@@ -15,8 +15,6 @@
 
 <p>
 <b>Team:</b>
-<%= link_to @player.team.name, team_url %>
+<%= link_to @player.team.name, team_url(@player.team.id) %>
 </p>
-
-<p>
 
